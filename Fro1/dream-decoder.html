@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <img src="assets/icons/dream_decoder.png" alt="Dream Decoder">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Decoder</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 12px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #ffb347;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ffcc70;
+        }
+        #loadingMessage {
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+        #decoderOutput {
+            margin-top: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        #roadmapContainer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+ <div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+      <!-- Roadmaps container -->
+        <div id="roadmapContainer"></div>
+
+    <div class="container">
+        <h1>🌙 Dream Decoder</h1>
+
+        <!-- Dream input -->
+        <textarea id="dreamInput" placeholder="Describe your dream here..."></textarea>
+        <div style="text-align:center;">
+            <button onclick="decodeDream()">🔮 Decode Dream</button>
+            <button onclick="saveDreamEntry(event)">💾 Save Dream to Journal</button>
+        </div>
+
+        <!-- Loading message -->
+        <div id="loadingMessage" style="display: none;">Decoding your dream...</div>
+
+        <!-- Output -->
+        <div id="decoderOutput" style="display: none;">
+            <p><strong>Summary:</strong> <span id="outputSummary"></span></p>
+            <p><strong>Emotion:</strong> <span id="outputEmotion"></span></p>
+        </div>
+
+      
+        
+    </div>
+
+    <!-- Script -->
+    <script src="script.js?v=2"></script>
+</body>
+</html>

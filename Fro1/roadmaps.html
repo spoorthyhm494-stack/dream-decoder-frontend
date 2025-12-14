@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Roadmaps</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+    <h1>Dream Roadmaps</h1>
+
+    <div id="createForm">
+        <input type="text" id="roadmapTitle" placeholder="Roadmap Title">
+        <textarea id="roadmapSteps" placeholder="Roadmap Goal"></textarea>
+        <button id="createRoadmapBtn">Create Roadmap</button>
+    </div>
+
+    <div id="roadmapList"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Progress Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+
+<div class="container">
+    <h1>Your Progress Summary</h1>
+    
+    <div id="progress-summary">
+        Loading progress data...
+    </div>
+
+    <h2>Goals & Milestones</h2>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

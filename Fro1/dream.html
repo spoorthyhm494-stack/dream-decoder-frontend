@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dreamy Animated Icons — Preview</title>
+  <style>
+    :root{
+      --bg: #0d0d26;
+      --card: #25254a;
+      --primary: #6c5ce7; /* violet */
+      --accent: #43e97b; /* neon green */
+      --soft: #e8e6ff;
+      --glow: rgba(108,92,231,0.35);
+      --size: 96px;
+    }
+
+    html,body{height:100%;margin:0;background:linear-gradient(135deg,#0d0d26 0%, #0b1228 100%);font-family:Inter, Poppins, system-ui, -apple-system, sans-serif;color:var(--soft);display:flex;align-items:center;justify-content:center;padding:40px}
+    .wrap{max-width:980px;background:var(--card);padding:28px;border-radius:14px;box-shadow:0 8px 30px var(--glow);display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    h3{grid-column:1/-1;text-align:center;color:var(--primary);margin:0 0 12px;font-weight:600}
+
+    .icon-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:150px;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+    .label{font-size:13px;color:#dcd8ff}
+
+    /* Gentle floating for whole icon */
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+    /* Slow rotation */
+    .slow-rotate{animation:rotate 14s linear infinite}
+    @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+    /* Pulsing glow */
+    .pulse{animation:pulse 2.8s ease-in-out infinite}
+    @keyframes pulse{0%{filter:drop-shadow(0 0 0 rgba(108,92,231,0))}50%{filter:drop-shadow(0 6px 18px rgba(108,92,231,0.18))}100%{filter:drop-shadow(0 0 0 rgba(108,92,231,0))}}
+
+    /* subtle sparkle */
+    .sparkle{opacity:0.9;animation:spark 2s linear infinite}
+    @keyframes spark{0%{opacity:0}40%{opacity:1}100%{opacity:0}}
+
+    /* utility to size svg consistently */
+    svg.icon{width:var(--size);height:var(--size);display:block}
+
+    /* Make SVG shapes feel hand-drawn: slightly irregular stroke-dasharray */
+    .hand{stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+
+    /* small helpers for accessibility focus */
+    .icon-card:focus{outline:2px solid rgba(67,233,123,0.12);}
+
+    /* Progress circle animation (used inside svg via stroke-dashoffset animation) */
+    .progress-circle{animation:progress 6s ease forwards}
+    @keyframes progress{from{stroke-dashoffset:440}to{stroke-dashoffset:88}}
+
+    /* Roadmap path lighting - uses stroke-dashoffset */
+    .road-path{stroke-dasharray:600;stroke-dashoffset:600;animation:roadReveal 4.2s ease forwards}
+    @keyframes roadReveal{0%{stroke-dashoffset:600}60%{stroke-dashoffset:200}100%{stroke-dashoffset:0}}
+
+  </style>
+</head>
+<body>
+<div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+  <div class="wrap" role="region" aria-label="Dream icons preview">
+    <h3>Soft Dream-Themed Animated Icons (copy SVGs into your project)</h3>
+
+    <!-- 1. Dream Decoder (eye + sparkles) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float pulse" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ddTitle" role="img">
+        <title id="ddTitle">Dream Decoder</title>
+        <defs>
+          <radialGradient id="g-eye" cx="30%" cy="35%">
+            <stop offset="0%" stop-color="#9be7ff" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0.75"/>
+          </radialGradient>
+          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- outer lash / shape -->
+        <path class="hand" d="M12 48 C26 26, 70 18, 84 48 C70 74, 26 82, 12 48 Z" fill="rgba(255,255,255,0.02)" stroke="#cfcaf6" stroke-width="2.6"/>
+
+        <!-- iris -->
+        <circle cx="48" cy="48" r="18" fill="url(#g-eye)" filter="url(#softGlow)"/>
+
+        <!-- pupil -->
+        <circle cx="48" cy="48" r="8" fill="#0b0b1a" opacity="0.95" />
+
+        <!-- sparkles group -->
+        <g class="sparkles">
+          <circle cx="70" cy="24" r="2.6" fill="#fff" class="sparkle" style="animation-delay: .1s"/>
+          <circle cx="78" cy="36" r="1.8" fill="#ffd8f7" class="sparkle" style="animation-delay: .5s"/>
+          <circle cx="60" cy="14" r="1.6" fill="#b9f6ff" class="sparkle" style="animation-delay: .9s"/>
+        </g>
+      </svg>
+      <div class="label">Dream Decoder</div>
+    </div>
+
+    <!-- 2. Roadmap Generator (path + stars lighting up) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="rmTitle" role="img">
+        <title id="rmTitle">Roadmap Generator</title>
+        <defs>
+          <linearGradient id="road-grad" x1="0" x2="1">
+            <stop offset="0%" stop-color="#b7a3ff"/>
+            <stop offset="100%" stop-color="#6c5ce7"/>
+          </linearGradient>
+        </defs>
+
+        <!-- faint constellation background -->
+        <g opacity="0.08">
+          <path d="M10 76 C30 40, 60 40, 86 18" stroke="#ffffff" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- curvy roadmap -->
+        <path class="hand road-path" d="M14 70 C30 50, 50 40, 78 22" fill="none" stroke="url(#road-grad)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- milestones (stars that light up) -->
+        <g>
+          <g transform="translate(16,70)">
+            <circle r="3.4" fill="#fff" opacity="0.95"/>
+          </g>
+          <g transform="translate(34,56)">
+            <circle r="3.8" fill="#fff" class="sparkle" style="animation-delay:1s"/>
+          </g>
+          <g transform="translate(54,46)">
+            <circle r="3.6" fill="#ffd36a" class="sparkle" style="animation-delay:1.6s"/>
+          </g>
+          <g transform="translate(78,26)">
+            <circle r="4" fill="#b9f6ff" class="sparkle" style="animation-delay:2.2s"/>
+          </g>
+        </g>
+      </svg>
+      <div class="label">Roadmap Generator</div>
+    </div>
+
+    <!-- 3. Smart Notifications (bell with floating particles) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="snTitle" role="img">
+        <title id="snTitle">Smart Notifications</title>
+        <defs>
+          <radialGradient id="bell-grad">
+            <stop offset="0%" stop-color="#fff8e1"/>
+            <stop offset="100%" stop-color="#ffd36a"/>
+          </radialGradient>
+        </defs>
+
+        <!-- bell body -->
+        <g class="pulse">
+          <path d="M30 42c0-12 18-22 34-22s34 10 34 22v12c0 8-5 14-14 16H44c-9-2-14-8-14-16V42z" transform="translate(-22,-6)" fill="url(#bell-grad)" opacity="0.98"/>
+          <rect x="34" y="70" width="40" height="6" rx="3" fill="#231f20" opacity="0.9" transform="translate(-22,-6)"/>
+          <circle cx="48" cy="76" r="4" fill="#e8e6ff" transform="translate(-22,-6)"/>
+        </g>
+
+        <!-- floating particles -->
+        <g>
+          <circle cx="18" cy="18" r="1.8" fill="#bfe9ff" class="sparkle" style="animation-delay:.2s"/>
+          <circle cx="26" cy="10" r="1.6" fill="#ffd8f7" class="sparkle" style="animation-delay:.6s"/>
+          <circle cx="10" cy="26" r="1.4" fill="#bff7d6" class="sparkle" style="animation-delay:1s"/>
+        </g>
+      </svg>
+      <div class="label">Smart Notifications</div>
+    </div>
+
+    <!-- 4. Progress Tracker (circle filling slowly) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ptTitle" role="img">
+        <title id="ptTitle">Progress Tracker</title>
+        <defs>
+          <linearGradient id="pg" x1="0" x2="1">
+            <stop offset="0%" stop-color="#43e97b"/>
+            <stop offset="100%" stop-color="#6c5ce7"/>
+          </linearGradient>
+        </defs>
+
+        <!-- background ring -->
+        <circle cx="48" cy="48" r="36" fill="none" stroke="#1b1b33" stroke-width="10"/>
+
+        <!-- animated progress ring -->
+        <circle class="hand progress-circle" cx="48" cy="48" r="36" fill="none" stroke="url(#pg)" stroke-width="10" stroke-linecap="round" transform="rotate(-90 48 48)" stroke-dasharray="226" stroke-dashoffset="440" />
+
+        <!-- small center icon -->
+        <g>
+          <circle cx="48" cy="48" r="12" fill="#0b0b1a" opacity="0.8"/>
+          <path d="M42 50 h12 v-6 h-12 z" fill="#cfefff" transform="translate(0,0)"/>
+        </g>
+      </svg>
+      <div class="label">Progress Tracker</div>
+    </div>
+
+    <!-- 5. Dream Notes (notebook with drifting pages or sparkles) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dnTitle" role="img">
+        <title id="dnTitle">Dream Notes</title>
+        <defs>
+          <linearGradient id="note-grad" x1="0" x2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#e8e6ff" stop-opacity="0.6"/>
+          </linearGradient>
+        </defs>
+
+        <!-- cover -->
+        <rect x="20" y="16" width="50" height="64" rx="6" fill="#111226" opacity="0.9"/>
+        <!-- inner page drifting -->
+        <g class="hand" style="transform-origin:48px 48px; animation:pageDrift 5s ease-in-out infinite">
+          <rect x="26" y="22" width="44" height="58" rx="4" fill="url(#note-grad)" stroke="#d6d2ff" stroke-width="0.7"/>
+          <line x1="36" y1="34" x2="64" y2="34" stroke="#dacfff" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+          <line x1="36" y1="44" x2="64" y2="44" stroke="#d6d2ff" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+          <line x1="36" y1="54" x2="58" y2="54" stroke="#d6d2ff" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+        </g>
+        <style>@keyframes pageDrift{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-4px) rotate(-1.2deg)}100%{transform:translateY(0) rotate(0deg)}}</style>
+
+        <!-- tiny sparkles -->
+        <circle cx="70" cy="22" r="1.6" fill="#bfe9ff" class="sparkle" style="animation-delay:.3s"/>
+        <circle cx="74" cy="30" r="1.4" fill="#ffd8f7" class="sparkle" style="animation-delay:.7s"/>
+      </svg>
+      <div class="label">Dream Notes</div>
+    </div>
+
+    <!-- 6. FutureMessage (envelope with glowing comet tail) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float slow-rotate" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fmTitle" role="img">
+        <title id="fmTitle">Future Message</title>
+        <defs>
+          <linearGradient id="env-grad" x1="0" x2="1">
+            <stop offset="0%" stop-color="#9be7ff"/>
+            <stop offset="100%" stop-color="#bfa3ff"/>
+          </linearGradient>
+        </defs>
+        <g>
+          <rect x="18" y="26" width="60" height="40" rx="6" fill="#0f1530" stroke="#cfcaf6" stroke-width="1"/>
+          <path d="M18 26 L48 48 L78 26" fill="none" stroke="url(#env-grad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- comet tail -->
+          <path d="M12 34 C26 30, 40 36, 54 30" fill="none" stroke="#bfe9ff" stroke-width="2" stroke-linecap="round" opacity="0.85">
+            <animate attributeName="stroke-opacity" values="0;0.8;0" dur="2.6s" repeatCount="indefinite" />
+          </path>
+          <circle cx="10" cy="36" r="2" fill="#fff" class="sparkle" />
+        </g>
+      </svg>
+      <div class="label">Future Message</div>
+    </div>
+
+    <!-- 7. Dashboard (tiles & constellation, warm glow) -->
+    <div class="icon-card" tabindex="0">
+      <svg class="icon float" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dbTitle" role="img">
+        <title id="dbTitle">Dashboard</title>
+        <defs>
+          <linearGradient id="dbg" x1="0" x2="1">
+            <stop offset="0%" stop-color="#ffd36a"/>
+            <stop offset="100%" stop-color="#bfa3ff"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="14" y="18" width="68" height="60" rx="8" fill="#0b0c1d" stroke="#2b2b54"/>
+        <!-- tiles -->
+        <rect x="22" y="26" width="18" height="14" rx="3" fill="url(#dbg)" opacity="0.95"/>
+        <rect x="44" y="26" width="20" height="14" rx="3" fill="#6c5ce7" opacity="0.9"/>
+        <rect x="22" y="44" width="42" height="12" rx="3" fill="#1e1e3d" stroke="#33335a"/>
+
+        <!-- faint constellation -->
+        <g opacity="0.12">
+          <circle cx="74" cy="26" r="1.6" fill="#fff" class="sparkle" style="animation-delay:.9s"/>
+          <circle cx="68" cy="42" r="1.4" fill="#bfe9ff" class="sparkle" style="animation-delay:1.4s"/>
+        </g>
+
+      </svg>
+      <div class="label">Dashboard</div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

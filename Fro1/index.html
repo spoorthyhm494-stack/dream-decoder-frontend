@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>DreamRoad – Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <h1>Welcome Back</h1>
+
+    <input id="loginEmail" type="email" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <hr>
+
+    <h2>Create Account</h2>
+
+    <input id="name" type="text" placeholder="Full Name">
+    <input id="signupEmail" type="email" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Password">
+
+    <button onclick="signup()">Signup</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

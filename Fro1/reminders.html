@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Reminders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+
+<div class="container">
+
+    <h1>Smart Reminders</h1>
+
+    <input id="reminderText" type="text" placeholder="Reminder text...">
+    <input id="reminderTime" type="datetime-local">
+
+    <button onclick="createReminder()">Create Reminder</button>
+
+    <h2>Your Reminders</h2>
+    <div id="reminderList">Loading...</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

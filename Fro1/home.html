@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamRoad | Decode Your Dreams, Map Your Future</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+            /* Using a light, transparent background over the body's dream pattern */
+            background: rgba(255, 255, 255, 0.5); 
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .hero-section h1 {
+            font-size: 3.8em;
+            margin-bottom: 10px;
+            color: #8a7ce8; /* Soft Violet */
+            text-shadow: 2px 2px 8px rgba(138, 124, 232, 0.4);
+            font-weight: 700;
+        }
+        .hero-section p {
+            font-size: 1.4em;
+            color: #4a4a68;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        .cta-button {
+            /* Inherits button styling from style.css, but customized for the hero */
+            background: linear-gradient(45deg, #a78fe6, #8a7ce8);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(138, 124, 232, 0.5);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(138, 124, 232, 0.7);
+        }
+        
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding-bottom: 50px;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(120, 100, 200, 0.15);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(120, 100, 200, 0.25);
+        }
+        .feature-card h3 {
+            color: #a78fe6;
+            margin-top: 15px;
+        }
+        .feature-card i {
+            font-size: 3em;
+            color: #8a7ce8;
+            text-shadow: 0 0 5px rgba(138, 124, 232, 0.3);
+        }
+        .section-heading {
+            color: #8a7ce8; 
+            margin-bottom: 50px;
+            font-size: 2.2em;
+        }
+        footer {
+            text-align: center; 
+            padding: 60px 20px; 
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        
+    </style>
+</head>
+<body>
+
+<header style="padding: 25px; text-align: right;">
+    <a href="index.html" class="auth-tab" onclick="showAuth('login')" style="margin-right: 10px;">Login</a>
+    <a href="index.html" class="cta-button" onclick="showAuth('signup')" style="padding: 10px 20px; font-size: 1em;">Sign Up</a>
+</header>
+
+<main>
+    <section class="hero-section">
+        <h1>DreamRoad: The Architecture of Your Life</h1>
+        <p>Unlock the wisdom of your subconscious. DreamRoad uses AI to translate your dreams into personalized roadmaps, progress trackers, and powerful future reminders.</p>
+        <a href="index.html" class="cta-button" onclick="showAuth('signup')">Start Your Free Journey Now</a>
+    </section>
+
+    <div class="container" style="background: none; box-shadow: none; backdrop-filter: none; padding-top: 50px;">
+        <h2 class="section-heading">How DreamRoad Guides You</h2>
+
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <i class="fas fa-eye"></i>
+                <h3>AI Dream Decoder</h3>
+                <p>Instantly gain psychological and emotional insight from your nightly visions, turning mystery into clarity.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-route"></i>
+                <h3>Goal Roadmaps</h3>
+                <p>Visualize the journey from abstract aspiration to concrete achievement with structured, trackable steps.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-feather-alt"></i>
+                <h3>Future Messaging</h3>
+                <p>Bridge the gap between your present and future self with scheduled advice, motivation, and reminders.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Intuitive Progress</h3>
+                <p>See your momentum build with simple, beautiful visualizations of your personal and goal-based growth.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <h2 style="color: #8a7ce8; font-size: 2em;">Ready to build a better tomorrow?</h2>
+        <p style="color: #6a6a82; font-size: 1.1em; margin-bottom: 30px;">It takes less than 30 seconds to begin.</p>
+        <a href="index.html" class="cta-button" onclick="showAuth('signup')">Sign Up and Begin Decoding</a>
+    </footer>
+</main>
+
+<script>
+    // This script ensures the header links direct back to the authentication page (index.html)
+    // and calls the JS function (showAuth) to display the correct form.
+    function showAuth(formType) {
+        // This function is placeholder. In a real scenario, you'd navigate to your login/signup page.
+        // Since your index.html IS the login/signup page, this will simply trigger the form switch.
+        // You need to ensure your full index.html (authentication hub) has the showAuth JS function.
+        console.log(`Navigating to ${formType} form.`);
+    }
+</script>
+
+</body>
+</html>

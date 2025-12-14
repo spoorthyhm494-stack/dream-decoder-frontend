@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>DreamRoad Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="navbar">
+    <button onclick="go('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+    <button onclick="go('dreams')"><i class="fas fa-cloud-moon"></i> Dreams</button>
+    <button onclick="go('roadmaps')"><i class="fas fa-route"></i> Roadmaps</button>
+    <button onclick="go('future')"><i class="fas fa-envelope"></i> Future Message</button>
+    <button onclick="go('progress')"><i class="fas fa-chart-line"></i> Progress</button>
+    <button onclick="go('reminders')"><i class="fas fa-bell"></i> Smart Notifications</button>
+    <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+
+<div class="container">
+    <h1 style="text-shadow: 0 0 10px #6c5ce7;"><i class="fas fa-star-of-life"></i> Welcome to DreamRoad</h1>
+    </div>
+
+<h2>Your Progress</h2>
+<div id="progress">Loading progress...</div>
+
+
+<div class="container">
+
+    <h1>Welcome to DreamRoad</h1>
+    <p>Your dreams • Progress • Future messages</p>
+
+    <h2>Your Progress</h2>
+    <div id="progress">Loading...</div>
+
+    <h2>Quick Dream Decode</h2>
+    <textarea id="dreamText" placeholder="Type a short dream..."></textarea>
+    <button onclick="decodeDream()">Decode Dream</button>
+    <p id="decodedResult"></p>
+    <h2>Smart Notifications</h2>
+<div id="reminders">No new notifications.</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+  
